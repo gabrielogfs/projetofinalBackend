@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Samsung Galaxy",
+    "description": "Excelente desempenho",
+    "price": 719.35,
+    "status": true,
+    "category": "Smartphone",
+    "thumbnail": "samsung.jpg",
+    "code": "P003",
+    "stock": 7
+  },
+  {
+    "id": 2,
+    "title": "Samsung Galaxy",
+    "description": "Excelente desempenho",
+    "price": 719.35,
+    "status": true,
+    "category": "Smartphone",
+    "thumbnail": "samsung.jpg",
+    "code": "P0014",
+    "stock": 7
+  }
+]
