@@ -23,8 +23,8 @@ class ProductManager {
           : 1;
     } catch (err) {
       console.error("Erro ao carregar produtos:", err);
-    }
-}
+    };
+};
 
 // 1º Método: Adição de produtos
 async addProduct(
@@ -84,7 +84,7 @@ async addProduct(
           }
         }
       )
-    }
+    };
 
 // 2º Método: Busca de produtos partindo do código
 async showProductbyCode(code){
@@ -102,7 +102,8 @@ async showProductbyCode(code){
             }
         } 
     } catch (error) {
-        console.error("Erro ao buscar produto: ", error);
+        console.error("Erro ao executar operação de consulta: ", error);
+        res.status(404).send("Erro ao ler arquivo JSON.");
         return null;
     };
 };
@@ -124,8 +125,8 @@ async showProducts(req, res) {
 
         res.json(products);
     } catch (error) {
-        console.error("Não foi possível realizar a consulta: ", error)
-        res.status(404).send("Erro ao ler arquivo JSON.")
+        console.error("Não foi possível realizar operação de consulta: ", error)
+        res.status(404).send("Erro ao ler arquivo JSON.");
     };
 };
 
@@ -148,9 +149,10 @@ async uptdateStock(code, newStock){
             })
     }
 } catch(error){
-    console.error("Erro ao atualizar estoque do produto: ", error);
+    console.error("Erro ao executar a operação de atualização de estoque: ", error);
+    res.status(404).send("Erro ao ler arquivo JSON.");
     return null
-}
+};
 };
 
 // 5ª Método: Deletar um produto específico
@@ -170,7 +172,9 @@ async deleteProduct(code){
             })            
         }
     } catch(error){
-        console.error("Erro ao exclu")
-    }
-}
+        console.error("Erro ao executar a operação de exclusão: ", error);
+        res.status(404).send("Erro ao ler arquivo JSON.");
+        return null
+    };
+};
 };
